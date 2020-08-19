@@ -9,6 +9,6 @@
     > - kokoa-clone
     > - markdown
 
-2.  UI & uX
+2.  UI & UX
     > - search
     > - try
