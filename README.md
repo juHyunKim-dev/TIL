@@ -2,14 +2,13 @@
 
 ---
 
-##Today I Learned!
-'''
+## Today I Learned!
 
-> 1. Front-end
->    > - kokoa-clone
->    > - markdown
+1.  Front-end
 
-> 2. UI & uX
->    > - search
->    > - try
->    >   '''
+    > - kokoa-clone
+    > - markdown
+
+2.  UI & uX
+    > - search
+    > - try
