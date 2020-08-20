@@ -52,6 +52,28 @@ span { display : block; background-color: turquoise; }
 
 이렇게 설정하면 block으로 속성 변환.
 
-> 어떤 요소가 inline이면 그 요소는 높이와 너비가 없음.
+> 어떤 요소가 inline이면 그 요소는 높이와 너비가 없음. -> ~~box~~
 
-    block은 높이와 너비가 있음.
+    block은 높이와 너비가 있음. -> box
+
+**box의 특징 3가지**
+
+1. margin
+   > box의 border(경계)의 **바깥**에 있는 공간
+
+- 값이 하나면 전체
+  margin : 20px;
+- 값이 두개면 '상하, 좌우'
+  margin : 20px, 10px;
+- 값이 네개면 위,오,아래,왼(시계방향 순서)
+  margin : 20px, 10px, 20px, 10px;
+
+---
+
+- _collapsing margin_
+  ![강의화면](./강의화면.png)
+  흰 box의 경계가 보라색 box의 경계와 같을 때 일어나고, 그때 두 box의 margin은 하나가 된다.
+  (위,아래쪽만 일어남)
+
+2. padding
+3. border
