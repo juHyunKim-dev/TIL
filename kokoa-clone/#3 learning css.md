@@ -7,11 +7,11 @@ html과 css를 섞는 법 2가지
 	<style> ~~~css~~~~</style>
 
  2. css와 html을 분리하기
-	**추천**분리된 파일을 가지게 되면 이 파일을 
+	**추천**분리된 파일을 가지게 되면 이 파일을
 	다른 많은 HTML 페이지에서 사용할 수 있기 때문
 
  	css파일 만들기(styles.css)
-	link 태그를 이용해서 파일을 연결 
+	link 태그를 이용해서 파일을 연결
 	<link href="styles.css" rel="stylesheet" />
 ---------------------------------------------
 ·Writing Our First CSS Lines
@@ -38,4 +38,3 @@ html과 css를 섞는 법 2가지
 ·Margin Part One
 
 ```
-	
