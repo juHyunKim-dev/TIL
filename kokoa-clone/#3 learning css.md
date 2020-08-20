@@ -56,10 +56,11 @@ span { display : block; background-color: turquoise; }
 
     block은 높이와 너비가 있음. -> box
 
-**box의 특징 3가지**
+##### **box의 특징 3가지**
 
-1. margin
-   > box의 border(경계)의 **바깥**에 있는 공간
+**1. margin**
+
+> box의 border(경계)의 **바깥**에 있는 공간
 
 - 값이 하나면 전체
   margin : 20px;
@@ -79,5 +80,71 @@ span { display : block; background-color: turquoise; }
 
 ---
 
-2. padding
-3. border
+**2. padding**
+padding은 margin과 반대 개념
+
+> box의 border(경계)로부터 **안쪽**에 있는 공간
+
+- _요소간에 차이를 주는 방법 = id_
+  id를 가리키는 방법 -> #뒤에 id명 쓰기
+  CSS 코드의 id명은 HTML 코드의 id명과 같아야 함.
+
+- 이번강의 코드
+
+```html
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html lang="kr">
+  <head>
+    <title>practice</title>
+    <style>
+      html {
+        background-color: darkolivegreen;
+      }
+      body {
+        margin: 20;
+        padding: 20px;
+        background-color: orangered;
+      }
+      div {
+        padding: 20px;
+        height: 150px;
+        width: 150px;
+        background-color: wheat;
+      }
+      #first {
+        height: 150px;
+        width: 150px;
+        background-color: orchid;
+      }
+      #second {
+        height: 100px;
+        width: 100px;
+        background-color: powderblue;
+      }
+      #third {
+        height: 50px;
+        width: 50px;
+        background-color: royalblue;
+      }
+      #fourth {
+        height: 25px;
+        width: 25px;
+        background-color: burlywood;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="first">
+      <div id="second">
+        <div id="third">
+          <div id="fourth"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <html></html>
+</html>
+```
+
+**3. border**
