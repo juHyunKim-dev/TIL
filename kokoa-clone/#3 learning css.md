@@ -70,8 +70,10 @@ span { display : block; background-color: turquoise; }
 
 ---
 
-** _collapsing margin_**
+**_collapsing margin_**
+
 ![강의화면](C:\Users\My\Desktop\TlL\TIL\kokoa-clone\강의화면.PNG)
+
 흰 box의 경계가 보라색 box의 경계와 같을 때 일어나고, 그때 두 box의 margin은 하나가 된다.
 (위,아래쪽만 일어남)
 
