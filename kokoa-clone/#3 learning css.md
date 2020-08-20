@@ -34,7 +34,24 @@ html과 css를 섞는 법 2가지
 	두 종류의 형태가 존재
 	block은 옆에 아무 것도 올 수 없음(대부분)
 	inline은 같은 줄에 위치할 수 있음(span,link,image)
-----------------------------------------------
-·Margin Part One
-
 ```
+
+---
+
+### Margin Part One
+
+> _block을 inline으로 바꾸기 가능할까?_
+
+    = display 속성을 사용하자
+    ex)기본적으로 span의 display속성은 inline인데,
+    ```html
+    span {
+    	display : block;
+    	background-color: turquoise;
+    }
+    ```
+    이렇게 설정하면 block으로 속성 변환.
+
+> 어떤 요소가 inline이면 그 요소는 높이와 너비가 없음.
+
+    block은 높이와 너비가 있음.
