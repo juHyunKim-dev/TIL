@@ -86,7 +86,7 @@ padding은 margin과 반대 개념
 > box의 border(경계)로부터 **안쪽**에 있는 공간
 
 - _요소간에 차이를 주는 방법 = id_ <br>
-  id를 가리키는 방법 -> #뒤에 id명 쓰기
+  id를 가리키는 방법 -> #뒤에 id명 쓰기 <br>
   CSS 코드의 id명은 HTML 코드의 id명과 같아야 함.
 
 - 이번강의 코드
@@ -148,3 +148,20 @@ padding은 margin과 반대 개념
 ```
 
 **3. border**
+
+> border은 말그대로 box의 경계 <br>
+
+border style MDN으로 검색하면 여러 style옵션을 볼 수 있음.
+
+```html
+* { border: 2px dashed black; }
+```
+
+"\*"표시는 전체를 뜻함.<br>
+border는 inline과 block 모두에 적용됨.<br>
+CSS의 cascading한 성질을 이용할 수 도 있음.<br>
+이때 너비부터 차례대로 다시 쓸 필요 없이 border-style 로 지정가능
+
+```html
+span { border-style:dotted; }
+```
