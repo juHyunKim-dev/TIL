@@ -165,3 +165,10 @@ CSS의 cascading한 성질을 이용할 수 도 있음.<br>
 ```html
 span { border-style:dotted; }
 ```
+
+<br>
+### _3.8 Classes_
+span은 inline이기 때문에 높이와 너비가 없음.<br>
+그래서 위, 아래에 margin을 가질 수 없다.<br>
+padding은 사방에 다 가질 수 있음.<br>
+margin은 좌우로만 가질 수 있음.<br>
