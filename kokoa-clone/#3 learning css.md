@@ -167,7 +167,7 @@ span { border-style:dotted; }
 ```
 
 <br>
-### 3.8 Classes <br>
+### Classes <br>
 span은 inline이기 때문에 높이와 너비가 없음.<br>
 그래서 위, 아래에 margin을 가질 수 없다.<br>
 padding은 사방에 다 가질 수 있음.<br>
