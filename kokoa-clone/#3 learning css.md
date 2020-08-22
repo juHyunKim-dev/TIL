@@ -166,11 +166,64 @@ CSS의 cascading한 성질을 이용할 수 도 있음.<br>
 span { border-style:dotted; }
 ```
 
----
-
-### 3.8 Classes
-
 span은 inline이기 때문에 높이와 너비가 없음.<br>
 그래서 위, 아래에 margin을 가질 수 없다.<br>
 padding은 사방에 다 가질 수 있음.<br>
-margin은 좌우로만 가질 수 있음.<br>
+margin은 좌우로만 가질 수 있음.
+
+---
+
+### 3.8 Classes <br>
+
+[#id명] 대신에 사용할 수 있다.<br>
+id는 고유의 값을 가져야 하는데 class는 요소를 가리킬 수 있으면서 겹쳐도 된다!<br>
+** .class명 **
+(.)은 class명이라는 뜻, 따라서 <br>
+
+```#tomato는 id="tomato"
+ .tomato는 class="tomato"
+```
+
+**_특징_**
+
+> - class명은 유일할 필요가 없다
+> - 여러 요소들이 같이 쓸 수 있다.(공유 가능)
+> - 한 번에 여러 class가 쓰일 수 있다.
+
+---
+
+border-radius: 5px; -> 모서리 둥글게 <br>
+
+```html
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html lang="kr">
+  <head>
+    <title>practice</title>
+    <style>
+      body {
+        padding: 20px;
+      }
+      .btn {
+        border-radius: 5px;
+        padding: 20px;
+      }
+      .free {
+        background-color: blue;
+        color: whitesmoke;
+      }
+      .happy {
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="free btn">get off work</span>
+    <span class="happy btn">get off work</span>
+    <span class="free btn">get off work</span>
+    <span class="happy btn">get off work</span>
+    <span class="free btn">get off work</span>
+    <span class="happy btn">get off work</span>
+  </body>
+</html>
+```
