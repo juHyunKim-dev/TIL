@@ -177,11 +177,12 @@ margin은 좌우로만 가질 수 있음.
 
 [#id명] 대신에 사용할 수 있다.<br>
 id는 고유의 값을 가져야 하는데 class는 요소를 가리킬 수 있으면서 겹쳐도 된다!<br>
-** .class명 **
+**[.class명]** <br>
 (.)은 class명이라는 뜻, 따라서 <br>
 
-```#tomato는 id="tomato"
- .tomato는 class="tomato"
+```
+#tomato는 id="tomato"
+.tomato는 class="tomato"
 ```
 
 **_특징_**
