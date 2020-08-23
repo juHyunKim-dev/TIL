@@ -263,7 +263,7 @@ ex) div의 부모는 body<br>
 > justify-content 속성
 >
 > > justify-content: center;<br>
-> > justify-content: flex-end;
+> > justify-content: flex-end;<br>
 > > justify-content: space-evenly; 등등
 
 박스의 공간을 자동으로 계산해줌. 그래서 화면 크기를 작게 만들어주면 빈 공간 크기도 작아짐<br>
