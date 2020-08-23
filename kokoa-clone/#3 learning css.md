@@ -228,3 +228,63 @@ border-radius: 5px; -> 모서리 둥글게 <br>
   </body>
 </html>
 ```
+
+---
+
+### 3.9 Inline Block <br>
+
+div는 기본적으로 block <br>
+이 display를 inline으로 바꾸면 아무것도 안보임 -> inline은 너비랑 높이를 가질 수 없기때문 <br>
+inline-block은 inline을 block으로 인식하게 함. 높이o, margin o, 바로 옆에 다른요소 o <br>
+inline-block의 디폴트 값은 이상하고 불편함, 정해진 형식이 없음. <br>
+_inline-block은 Responsive Design을 지원하지 않는다.-> 창 크기에 영향을 받음._ <br>
+
+```
+div {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-color: teal;
+       }
+```
+
+---
+
+### 3.10 Flexbox Part One <br>
+
+**flexbox**는 박스들을 어떤 곳이든 둘 수 있음, 아주 유연함. 2d 레이아웃에서 잘 작동<br>
+**_지켜야 할 3가지 규칙_** <br>
+
+1.  자식 element에는 어떤 것도 적지 말아야 함. 부모 엘리먼트에만 명시하기<br>
+    ex) div의 부모는 body<br>
+    부모 엘리먼트를 flex container로 만들어야함.-> body {display: flex;} <br>
+    엘리먼트들은 여전히 block이지만 body가 자식들을 제어할 수 있음. <br>
+
+    > justify-content 속성
+
+        >> justify-content: center;
+        >> justify-content: flex-end;
+        >> justify-content: space-evenly; 등등
+
+    <br>
+    박스의 공간을 자동으로 계산해줌. 그래서 화면 크기를 작게 만들어주면 빈 공간 크기도 작아짐<br>
+
+2.  주축과 교차축 <br>
+    flexbox에서 기본적으로 축들이 가지는 모습 <br>
+    justify-content는 주축에 적용됨.<br>
+    align-items는 교차축에 적용됨.<br>
+    기본적으로 교차축은 수직 -> 나중에 속성을 바꿀수도 있음<br>
+    <br>
+    body의 크기도 생각하기<br>
+    body { height :100vh; }<br>
+    vh는 viewport height를 말하는데 viewport=screen<br>
+    100vh는 화면 높이의 100%를 말함.<br>
+    align-items : flex-end;<br>
+    align-items : flex-start; <-기본값 <br>
+    <br>
+    **[정리]**
+    justify-content와 align-items를 적용하고 싶으면 display:flex를 해줘야 함.<br>
+    그러면 해당 엘리먼트인 body가 flex컨테이너가 될거임.<br>
+    flex 컨테이너는 두 개의 축을 가지는데 주축과 교차축<br>
+    디폴트로 주축은 수평, 교차축은 수직임.<br>
+    justify-content는 주축 align-items은 교차축이 적용됨<br>
