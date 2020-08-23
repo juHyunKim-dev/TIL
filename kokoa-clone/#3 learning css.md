@@ -261,11 +261,9 @@ ex) div의 부모는 body<br>
 엘리먼트들은 여전히 block이지만 body가 자식들을 제어할 수 있음. <br>
 
 > justify-content 속성
-
-> > justify-content: center;
-
+>
+> > justify-content: center;<br>
 > > justify-content: flex-end;
-
 > > justify-content: space-evenly; 등등
 
 박스의 공간을 자동으로 계산해줌. 그래서 화면 크기를 작게 만들어주면 빈 공간 크기도 작아짐<br>
