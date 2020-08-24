@@ -287,3 +287,238 @@ justify-content와 align-items를 적용하고 싶으면 display:flex를 해줘�
 flex 컨테이너는 두 개의 축을 가지는데 주축과 교차축<br>
 디폴트로 주축은 수평, 교차축은 수직임.<br>
 justify-content는 주축 align-items은 교차축이 적용됨<br>
+
+---
+
+### 3.11 Flexbox Part Two <br>
+
+1. 주축(main axis)와 교차축(cross axis)는 디폴트로 수평, 수직임.
+   이걸 바꾸기 위해서 *flex-diretion*을 수정하자.
+   두가지 옵션 row와 column이 있는데, 디폴트로 row<br>
+   column으로 하면 주축이 수직, 교차축이 수평
+
+2. 부모 엘리먼트를 flex 컨테이너로 했을 때 -> 자식 엘리먼트들도 flex 컨테이너가 될 수 있음<br>
+   자식 엘리먼트를 flex 컨테이너로 한 경우 자식 엘리먼트의 내용에 영향
+
+3. flexbox의 속성 더 알아보기<br>
+   wrapping : flex-wrap으로 설정을 바꿀 수 있음 <br>
+   flex-wrap: nowrap (디폴트값) 모든 요소를 같은 줄에 있게 만들어준다.<br>
+   flex-wrap: wrap 명시된 사이즈로 반영해서 화면 사이즈에 따라 다음줄로 옮김.<br>
+   <br>
+   flex-direction : column-reverse ->밑에서 시작해서 위로 올라감 (ex. 3, 2, 1) <br>
+   flex-direction : row-reverse
+   flex-wrap: wrap-reverse
+
+**flexbox는 박스를 배열하는데 유용함**
+
+### 3.12 Fixed <br>
+
+position 이라는 속성이 존재<br>
+position : fixed -> 화면을 스크롤해도 박스가 같은 위치에서 따라다님<br>
+기본적으로 같은 레이어에 위치하다가 top,left,right,bottom이라는 프로퍼티 중에서 하나만 수정해도 다른 레이어로 넘어감.<br>
+레이어 위의 레이어에 존재(제일 위 레이어)<br>
+
+---
+
+### 3.13 Relative Absolute <br>
+
+position : static 레이아웃이 박스를 처음 위치하는 곳에 두는 것 <br>
+**position: _relative_ -> element가 처음 위치한 곳을 기준으로 수정하는 것**
+top,bottom,left,right 속성 사용 가능<br>
+
+    position: relative;
+    top : -10px;
+
+**position : _absolute_ -> 가장 가까운 relative부모를 기준으로 이동함.** <br>
+그래서 relative한 부모를 찾지 못하면 body를 기준으로 이동.
+
+---
+
+### 3.14 Pseudo Selectors part One <br>
+
+Pseudo Selector : 좀 더 세부적으로 엘리먼트를 선택함. <br>
+보통 엘리먼트를 선택할때는 #id나 .class사용 <br>
+하지만 _pseudo selector는 html은 건드리지도 않고, css만으로 가능함._<br>
+
+    ex)
+    div:firtst-child {}
+    div:last-child {}
+    span:nth-child(2), span:nth-child(4){}
+    => span:nth-child(even) {} 짝수 다 적용
+    span:nth-child(odd) {} 홀수 다 적용
+    2n+1, 3n, 등과 같은 수식 적용가능
+
+---
+
+### 3.15 Combinators <br>
+
+전체 html코드의 흐름이 다음과 같을 때,
+
+```html
+<div>
+  <span></span>
+  <p>
+    <span></span>
+  </p>
+  <span></span>
+</div>
+```
+
+    ex) p span { }
+    -> p안에 있는 span을 말함. 이때 p는 부모 selector, span은 child selector
+    ex) div > span { }
+    -> 부모와 direct children의 관계
+    ex) p + span { }
+    -> 형제와 바로 뒤에 오는 형제의 관계
+    ex) p ~ span
+    -> 형제와 형제관계 꼭 바로 뒤에 올 필요는 없음.
+
+---
+
+### 3.16 Pseudo Selectors part Two <br>
+
+**:: attribute** <br>
+
+```
+input:required { border : 1px solid tomato;}
+input:optional { border : 1px solid wheat;}
+=>
+input {
+border: 1px solid wheat;
+}
+input : required {
+border-color : tomato;
+}
+```
+
+- attribute seletor : attribute를 통해 어떤 것이든 선택할 수 있게 해줌
+  ex)
+  input [type="password"] {
+  background-color : teal;
+  }
+
+  input [placeholder="username"] {
+  background-color : pink;
+  }
+
+  input [placeholder~="name"] {
+  background-color : yellowgreen;
+  }
+  -> "name"을 포함한 모든 input을 지정한 것.
+
+---
+
+### 3.17 States <br>
+
+    button:active {
+    background-color : tomato; - 커서로 클릭하면 적용
+    }
+    button:hover { } - 커서 위에 올리면 적용
+    button:focus { } - 키보드로 선택되었을 때 적용
+
+<br>
+    visited - 링크에만 적용됨.
+    a:visited {
+        color: tomato;
+        }
+    -내가 방문했던 링크에 적용됨. ( ·anchor : <a> </a> 링크를 뜻함, tag에 추가하는 부가적인 정보)
+<br>
+    focus-within
+    -> focused인 자식을 가진 부모 엘리먼트에 적용
+    자식이 focused 될때 부모엘리먼트가 변함.
+    ex) form : focus-wtihin
+<br>
+```html
+form : hover input { 
+  background-color : pink; 
+  }
+```
+- form이 hover상태가 되면 input이 바뀜<br>
+  부모의 state에 따라 자식을 바꾸는 것.<br>
+다음과 같이도 적용 가능
+```html
+ form : hover input : focus { 
+  background-color : pink; 
+    }
+```
+------
+
+### 3.18 Recap <br>
+
+<pseduo element 3개>
+
+1. ::placeholder <br>
+   ex) input :: placeholder { color : blue; }
+
+2. ::selection (드래그하면 변환) <br>
+   ex)p :: selection { color: white; background-color : red; }
+
+3. ::first-letter, ::first-line 등등 <br>
+
+**Recap** <br>
+
+> state
+>
+> > :hover
+> > :active
+> > :focus
+> > :visited
+> > :focus-within
+
+> combinator
+>
+> > 부모 자식 ( )
+> > 부모와 바로 밑 자식 (>)
+> > 형제와 바로 다음 형제 (+)
+> > 형제와 형제(~)
+
+> attribute 사용
+>
+> > input[] : []안에 아무거나 적용 가능
+
+> > ex) input[type="password"] { background-color:green; } <br>
+> > -> password라는 type을 가진 input만 선택
+
+---
+
+### 3.19 Colors and Variables <br>
+
+- color
+
+1. hex code <br>
+   : #fcce00 등등
+2. rgb <br>
+   : rgb(252, 206, 0);
+3. rgba <br>
+   : rgb에 a(alpha-투명도(0~1))를 더한 것
+
+크롬 extension으로 color picker 사용하면 좋음.
+
+- variable( = custom property)
+
+_:root라 불리는 element에 변수 추가하기_<br>
+:root는 기본적으로 모든 document의 뿌리임<br>
+**변수이름짓기 : [--변수-이름]**<br>
+빈 공간이 있으면 -로 채워야 함.<br>
+**사용하기 : var(--변수-이름)**<br>
+
+ex)대략적인 코드 (완벽X)
+
+```html
+<head>
+  <style>
+    :root {
+      --main-color: #fcce00;
+      --defalut-border: 1px solid var(--main-color);
+    }
+    a {
+      color: var(--main-color);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <a href="#">website</a>
+  </div>
+</body>
+```
