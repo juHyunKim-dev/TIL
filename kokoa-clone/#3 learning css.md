@@ -293,7 +293,7 @@ justify-content는 주축 align-items은 교차축이 적용됨<br>
 ### 3.11 Flexbox Part Two <br>
 
 1. 주축(main axis)와 교차축(cross axis)는 디폴트로 수평, 수직임.
-   이걸 바꾸기 위해서 *flex-diretion*을 수정하자.
+   이걸 바꾸기 위해서 *flex-diretion*을 수정하자.<br>
    두가지 옵션 row와 column이 있는데, 디폴트로 row<br>
    column으로 하면 주축이 수직, 교차축이 수평
 
@@ -306,24 +306,26 @@ justify-content는 주축 align-items은 교차축이 적용됨<br>
    flex-wrap: wrap 명시된 사이즈로 반영해서 화면 사이즈에 따라 다음줄로 옮김.<br>
    <br>
    flex-direction : column-reverse ->밑에서 시작해서 위로 올라감 (ex. 3, 2, 1) <br>
-   flex-direction : row-reverse
+   flex-direction : row-reverse<br>
    flex-wrap: wrap-reverse
 
 **flexbox는 박스를 배열하는데 유용함**
 
+---
+
 ### 3.12 Fixed <br>
 
-position 이라는 속성이 존재<br>
+**position** 이라는 속성이 존재<br>
 position : fixed -> 화면을 스크롤해도 박스가 같은 위치에서 따라다님<br>
-기본적으로 같은 레이어에 위치하다가 top,left,right,bottom이라는 프로퍼티 중에서 하나만 수정해도 다른 레이어로 넘어감.<br>
-레이어 위의 레이어에 존재(제일 위 레이어)<br>
+기본적으로 같은 레이어에 위치하다가 top, left, right, bottom 이라는 프로퍼티 중에서 하나만 수정해도 다른 레이어로 넘어감.<br>
+=> 즉, 레이어 위의 레이어에 존재(제일 위 레이어)<br>
 
 ---
 
 ### 3.13 Relative Absolute <br>
 
 position : static 레이아웃이 박스를 처음 위치하는 곳에 두는 것 <br>
-**position: _relative_ -> element가 처음 위치한 곳을 기준으로 수정하는 것**
+**position: _relative_ -> element가 처음 위치한 곳을 기준으로 수정하는 것** <br>
 top,bottom,left,right 속성 사용 가능<br>
 
     position: relative;
@@ -392,6 +394,8 @@ border-color : tomato;
 ```
 
 - attribute seletor : attribute를 통해 어떤 것이든 선택할 수 있게 해줌
+
+```
   ex)
   input [type="password"] {
   background-color : teal;
@@ -405,6 +409,7 @@ border-color : tomato;
   background-color : yellowgreen;
   }
   -> "name"을 포함한 모든 input을 지정한 것.
+```
 
 ---
 
@@ -417,35 +422,37 @@ border-color : tomato;
     button:focus { } - 키보드로 선택되었을 때 적용
 
 <br>
-    visited - 링크에만 적용됨.
-    a:visited {
-        color: tomato;
-        }
-    -내가 방문했던 링크에 적용됨. ( ·anchor : <a> </a> 링크를 뜻함, tag에 추가하는 부가적인 정보)
+
+      visited - 링크에만 적용됨.
+      a:visited {
+          color: tomato;
+          }
+      -내가 방문(or 클릭)한 링크에 적용됨. ( ·anchor : <a> </a> 링크를 뜻함, tag에 추가하는 부가적인 정보)
+
 <br>
-    focus-within
-    -> focused인 자식을 가진 부모 엘리먼트에 적용
-    자식이 focused 될때 부모엘리먼트가 변함.
-    ex) form : focus-wtihin
-<br>
+
+      focus-within
+      -> focused인 자식을 가진 부모 엘리먼트에 적용
+      자식이 focused 될때 부모엘리먼트가 변함.
+      ex) form : focus-wtihin
+
 ```html
-form : hover input { 
-  background-color : pink; 
-  }
+form : hover input { background-color : pink; }
 ```
-- form이 hover상태가 되면 input이 바뀜<br>
-  부모의 state에 따라 자식을 바꾸는 것.<br>
+
+-> form이 hover상태가 되면 input이 바뀜<br>
+부모의 state에 따라 자식을 바꾸는 것.<br>
 다음과 같이도 적용 가능
+
 ```html
- form : hover input : focus { 
-  background-color : pink; 
-    }
+form : hover input : focus { background-color : pink; }
 ```
-------
+
+---
 
 ### 3.18 Recap <br>
 
-<pseduo element 3개>
+_<pseduo element 3개>_
 
 1. ::placeholder <br>
    ex) input :: placeholder { color : blue; }
@@ -459,31 +466,32 @@ form : hover input {
 
 > state
 >
-> > :hover
-> > :active
-> > :focus
-> > :visited
-> > :focus-within
+> > :hover<br>
+> > :active<br>
+> > :focus<br>
+> > :visited<br>
+> > :focus-within<br>
 
 > combinator
 >
-> > 부모 자식 ( )
-> > 부모와 바로 밑 자식 (>)
-> > 형제와 바로 다음 형제 (+)
-> > 형제와 형제(~)
+> > 부모 자식 ( )<br>
+> > 부모와 바로 밑 자식 (>)<br>
+> > 형제와 바로 다음 형제 (+)<br>
+> > 형제와 형제(~)<br>
 
 > attribute 사용
 >
 > > input[] : []안에 아무거나 적용 가능
 
-> > ex) input[type="password"] { background-color:green; } <br>
+> > ex)<br>
+> > input[type="password"] { background-color:green; } <br>
 > > -> password라는 type을 가진 input만 선택
 
 ---
 
 ### 3.19 Colors and Variables <br>
 
-- color
+- **color**
 
 1. hex code <br>
    : #fcce00 등등
@@ -494,9 +502,10 @@ form : hover input {
 
 크롬 extension으로 color picker 사용하면 좋음.
 
-- variable( = custom property)
+- **variable**( = custom property)
 
 _:root라 불리는 element에 변수 추가하기_<br>
+<br>
 :root는 기본적으로 모든 document의 뿌리임<br>
 **변수이름짓기 : [--변수-이름]**<br>
 빈 공간이 있으면 -로 채워야 함.<br>
