@@ -110,7 +110,7 @@ But, 계속 재생되는 애니메이션을 얻고 싶으면 어떻게 해야 �
         img {
         border: 10px solid black;
         border-radius: 50%;
-        animation: 애니메이션이름 5s ease-in-out _infinite_;
+        animation: 애니메이션이름 5s ease-in-out infinite;
         }
         -> infinite 쓰면 무한으로 반복재생. <br>
 
