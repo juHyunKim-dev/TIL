@@ -48,139 +48,139 @@ _border-radius : 50%; -> Circle!_ <br>
         transform : translateX(-60px);
         -> 왼쪽으로 60px 옮기기
 
-!주의
-translate에서 이 명령어는 transformation을 적용시키긴 하지만
-다른 형제(sibling)를 변화시키지 않는다.
--> 이미지와 글씨가 일직선 상에 있을때, 이미지를 transform : translate 하면
-텍스트는 이동하지 않고, 이미지는 텍스트위로 겹침.
+**_주의_** <br>
+translate에서 이 명령어는 transformation을 적용시키긴 하지만 다른 형제(sibling)를 변화시키지 않는다.<br>
+-> 이미지와 글씨가 일직선 상에 있을때, 이미지를 transform : translate 하면 텍스트는 이동하지 않고, 이미지는 텍스트위로 겹침.<br>
 
-페이지의 픽셀을 변형시키는 것이기 때문에
-Transformation은 다른 box element, 이미지에 영향을 끼치지 않음.
-margin, padding이 적용되지 않음. 일종의 3D transformation이기 때문
+페이지의 픽셀을 변형시키는 것이기 때문에 Transformation은 다른 box element, 이미지에 영향을 끼치지 않음.<br>
+margin, padding도 적용되지 않음. 일종의 _3D_ transformation이기 때문 <br>
 
-다른 요소의 box를 변형시키지 않고 원하는 요소를 이동시키기 위해서 사용하는것
+다른 요소의 box를 변형시키지 않고 원하는 요소를 이동시키기 위해서 사용하는것 <br>
 
-**transition과 연계해서 사용하기!** ->
+**transition과 연계해서 사용하기!**
 
 -> transition으로 transform을 적용하자.
-transition: transform 5s ease-in-out;
+
+        transition: transform 5s ease-in-out;
 
 **transition은 root에 있어야 한다!!**
 
-참고 사이트 _transform mdn_
-여기서 복사해서 사용 가능.
+참고 사이트 _transform mdn_ <br>
+여기서 복사해서 사용 가능.<br>
 
 ---
 
-### 4.3 Animations part One
+### 4.3 Animations part One <br>
 
-transition : 어떤 상태(state)에서 다른 상태(state)로 변하는 것을 애니메이션으로 만듦.
-하지만 마우스를 올렸을 때만 볼 수 있음.
+transition : 어떤 상태(state)에서 다른 상태(state)로 변하는 것을 애니메이션으로 만듦. <br>
+하지만 마우스를 올렸을 때만 볼 수 있음. <br>
 
-But, 계속 재생되는 애니메이션을 얻고 싶으면 어떻게 해야 하나
-(마우스를 위에 올리거나, transition없이)
-애니메이션에는 2가지 옵션이 있음.
+But, 계속 재생되는 애니메이션을 얻고 싶으면 어떻게 해야 할까?<br>
+(마우스를 위에 올리거나, transition없이)<br>
+=> 애니메이션 사용!<br>
 
-1. from{} to {}
+**애니메이션에는 2가지 옵션이 있다**
 
-[ex.1]
-@keyframes 애니메이션이름 {
-from {
-transform: rotateX(0);
-}
-to {
-transform: rotateX(360deg);
-}
-}
-img {
-border: 10px solid black;
-border-radius: 50%;
-animation: 애니메이션이름 5s ease-in-out;
-}
+1.  from{} to {}
 
-[ex.2]
-@keyframes 애니메이션이름 {
-from {
-transform: rotateY(0);
-}
-to {
-transform: rotateY(360deg);
-}
-}
-img {
-border: 10px solid black;
-border-radius: 50%;
-animation: 애니메이션이름 5s ease-in-out _infinite_;
-}
--> infinite 쓰면 무한으로 반복재생.
+        [ex.1]
+        @keyframes 애니메이션이름 {
+        from {
+        transform: rotateX(0);
+        }
+        to {
+        transform: rotateX(360deg);
+        }
+        }
+        img {
+        border: 10px solid black;
+        border-radius: 50%;
+        animation: 애니메이션이름 5s ease-in-out;
+        }
 
-## **_from {} to {} 옵션은 시작할 때 원위치에서 시작_**
+        [ex.2]
+        @keyframes 애니메이션이름 {
+        from {
+        transform: rotateY(0);
+        }
+        to {
+        transform: rotateY(360deg);
+        }
+        }
+        img {
+        border: 10px solid black;
+        border-radius: 50%;
+        animation: 애니메이션이름 5s ease-in-out _infinite_;
+        }
+        -> infinite 쓰면 무한으로 반복재생. <br>
 
-### 4.4 Animations part Two
+**_from {} to {} 옵션은 시작할 때 원위치에서 시작_**
 
-애니메이션에는 2가지 옵션이 있음
+2.  %주기
 
-1. from {} to {}
-2. %주기
-   ex)
-   @keyframes 애니메이션이름 {;
+        ex)
+        @keyframes 애니메이션이름 {
 
-0% {
-transform: rotateY(0);
-}
-50% {
-transform: rotateY(180deg) translateX(100px);
-}
-100% {
-transform: rotateY(0);
-}
--> 이런식으로 표현하면 되돌리기를 표현할 수 있음
-원하는 만큼 많은 스탭을 가질 수 있음 (0,25,50,75,100% 등등)
+        0% {
+        transform: rotateY(0);
+        }
+        50% {
+        transform: rotateY(180deg) translateX(100px);
+        }
+        100% {
+        transform: rotateY(0);
+        }
 
-_animista.net_ 사이트 참고하기
+-> 이런식으로 표현하면 되돌리기를 표현할 수 있음<br>
+원하는 만큼 많은 스탭을 가질 수 있음 (0,25,50,75,100% 등등)<br>
 
-## !참고) 자주쓰는 옵션에는 [ opacity : 0; ] 가 있음
+_animista.net_ 사이트 참고하기<br>
 
-### 4.5 Media Queries
+(참고) 자주쓰는 옵션에는 [ opacity : 0; ] 가 있음<br>
 
-=> Responsive Design(반응형 디자인)
+---
 
-**media query는 코드의 조건을 추가할 수 있는 방법, 조건이 참이라면 이 CSS를 실행하라**
-오직 CSS만을 이용해서 스크린의 사이즈를 알 수 있음
-(웹사이트를 보고 있는 사용자의 스크린)
+### 4.5 Media Queries <br>
+
+=> Responsive Design(반응형 디자인)<br>
+**media query는 코드의 조건을 추가할 수 있는 방법, 조건이 참이라면 이 CSS를 실행하라** <br>
+
+오직 CSS만을 이용해서 웹사이트를 보고 있는 사용자의 스크린 사이즈를 알 수 있음
 
 - landscape모드( 가로모드)
 - portrait모드 (세로모드)
 
-@media screen and (min-width:650px) and (max-width : 800px){
-div {
-background-color :tomato;
-}
-}
+        @media screen and (min-width:650px) and (max-width : 800px){
+        div {
+        background-color :tomato;
+        }
+        }
 
-@media screen and (orientation : landscape) {
-span {
-display : none;
-}
-}
--> 화면이 가로모드일 때 span 보여주지 않음.
+        @media screen and (orientation : landscape) {
+        span {
+        display : none;
+        }
+        }
+        -> 화면이 가로모드일 때 span 보여주지 않음.
 
 ---
 
-### 4.6 Media Queries Recap
+### 4.6 Media Queries Recap <br>
 
 1.  media query의 사용 형식 기억하기
-    @media media-type(보통 screen) and (코드조건) {
-    element {
-    CSS
-    }
-    }
 
-!! media query 안 element에 css를 적용시켜야 한다.
+        @media media-type(보통은 screen) and (코드조건) {
+        element {
+                    CSS
+                }
+        }
 
-2. media query는 and를 써서 연결됨.
-   @ media screen and (min-width: 650px) and (max-width:800px)
-   ㅏ
-3. media query 중 핸드폰에만 적용되는 것들이 있음.
-4. CSS media query MDN 구글링하면 많은 예시가 존재.
-5. media-type 에는 screen, print등이 있다. 보통 screen을 사용
+!! media query 안 element에 css를 적용시켜야 한다.<br>
+
+2.  media query는 and를 써서 연결됨.
+
+        @ media screen and (min-width: 650px) and (max-width:800px)
+
+3.  media query 중 핸드폰에만 적용되는 것들이 있음. <br>
+4.  CSS media query MDN 구글링하면 많은 예시가 존재. <br>
+5.  media-type 에는 screen, print등이 있다. 보통 screen을 사용 <br>
