@@ -1,0 +1,48 @@
+# **#1 INTRODUCTION**
+
+# 1.5 What MAkes a Website?
+
+웹사이트는 텍스트 파일로 이루어져 있다. 텍스트를 브라우저에 전달하면, 브라우저는 코드를 이해해서 구현한다.
+
+⇒ 따라서 우리는 어떤 텍스트를 어디에 작성할지를 알면, 웹사이트를 제작할 수 있다
+
+# 1.6 What is HTML
+
+- 웹사이트를 만들 때 사용 되는 언어는 최소 2가지 ~ 최대 3가지임
+- 사용되는 언어는 HTML, CSS, JAVASCRIPT
+- HTML은 쉽다(?), CSS는 연습하면 되고 JAVASCRIPT는 따로 계속 배워야 함
+- 브라우저는 멍청하다 사람들이 사용하는 언어를 이해 못함, 브라우저는 우리의 웹사이트/CONTENT를 이해 못함.
+
+=> 그래서 우리가 해야 할 일은 브라우저에게 CONTENT가 무엇인지 알려주는 것
+
+=> 그리고 그것을 *HTML*을 통해 알려줌 ex) title 은 무엇이고, link가 무엇이고 등등..
+
+# 1.7 What is CSS
+
+HTML(skeleton): browser에게 웹사이트의 content가 "무엇"인지에 대해 알려주는 것
+
+ex) "Hey, browser. That's a title."
+
+CSS(muscles):  HTML과 같이 쓰이며, browser에게 웹사이트의 content가 어떻게 보여야 하는 지에 대해 알려주는 것
+
+ex) "Hey, browser. The title should be green."
+
+# 1.8 What is JavaScript
+
+Content를 위한 HTML, 디자인을 위한 CSS, 그리고 Interactivity(동적 상호작용)를 위한 JavaScript.
+
+# 1.9 Recap
+
+HTML → Markup Laguage
+
+         (Markup = Content)
+
+CSS → 디자인, 스타일을 위한 언어
+
+Javacript → interactivity(동적)를 위한 
+
+           “프로그래밍” 언어, ‘뇌’와 같음
+
+*3가지 언어 중에서, 프로그래밍 언어는 오직
+
+js뿐임.
